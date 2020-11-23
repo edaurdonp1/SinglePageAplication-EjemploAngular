@@ -4,15 +4,16 @@
   </div>
 </div>
 <div class="row">
-  <div class="col">
+  <div class="col animated fadeIn fast">
     <div class="card-columns">
-      <div class="card" *ngFor="let h of heroes">
+      <div class="card" *ngFor="let h of heroes; let i = index">
         <img class="card-img-top img-fluid" [src]="h.img" [alt]="h.nombre">
         <div class="card-body">
           <h4 class="card-title">{{ h.nombre }}</h4>
           <p class="card-text">{{ h.bio }}</p>
           <p class="card-text"><small class="text-muted">{{ h.aparicion }}</small></p>
-          <button type="button" class="btn btn-outline-primary btn-block">Ver más</button>
+          <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver más</button>
+          <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block"> link </a> -->
         </div>
       </div>
     </div>
