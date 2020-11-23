@@ -1,10 +1,10 @@
-<div class="row mt-2">
+<div class="row mt-2 animated fadeIn">
   <div class="col">
     <h1>{{heroe.nombre}} <small class="text-muted">{{heroe.aparicion}}</small></h1>
   </div>
 </div>
 <hr>
-<div class="row">
+<div class="row animated fadeIn fast">
   <div class="col-md-4">
     <img [src]="heroe.img" [alt]="heroe.nombre" class="img-fluid">
     <br>
@@ -14,6 +14,8 @@
     <h3>{{heroe.nombre}}</h3>
     <hr>
     <p class="text-justify">{{heroe.bio}}</p>
-    <img [src]="getPathCasa(heroe.casa)" [alt]="heroe.casa" class="float-right" style="width: 100px; height: auto;">
+    <!-- <img [src]="getPathCasa(heroe.casa)" [alt]="heroe.casa" class="float-right" style="width: 100px; height: auto;"> -->
+    <img *ngIf="heroe.casa == 'DC'" [src]="pathCasa.DC" [alt]="heroe.casa" class="float-right" style="width: 100px; height: auto;">
+    <img *ngIf="heroe.casa == 'Marvel'" [src]="pathCasa.Marvel" [alt]="heroe.casa" class="float-right" style="width: 100px; height: auto;">
   </div>
 </div>
